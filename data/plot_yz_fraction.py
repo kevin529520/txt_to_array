@@ -39,4 +39,4 @@ plt.show()
 print("Data array shape:", data_array.shape)
 print("Data array dtype:", data_array.dtype)
 # 输出转换后的数据
-print(data)
+print(data)  #
