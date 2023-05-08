@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import plotly.io as pio
 from PIL import Image
 import plotly.graph_objs as go
 # 创建初始帧
@@ -77,5 +78,5 @@ sliders = [dict(
 fig.update_layout(
     sliders=sliders
 )
-
+pio.write_html(fig, file='slider.html', auto_open=False)
 fig.show()

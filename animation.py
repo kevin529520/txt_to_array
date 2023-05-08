@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import plotly.io as pio
 from PIL import Image
 import plotly.graph_objs as go
 # 创建初始帧
@@ -58,7 +59,7 @@ for filename in sorted(os.listdir(folder_path)):
 # 将所有帧加入到动画中
 fig = go.Figure(frames=frames)
 #animation = go.Animation(frames=frames)
-fig.add_trace(frames[0].data[0])#frame里的data[0]
+fig.add_trace(frames[0].data[0])#frame里的data[0],开始时显示第一张图片
 print(frames[0])
 print(frames[0].data[0])
 fig.layout.updatemenus = [dict(
@@ -88,4 +89,5 @@ fig.layout.updatemenus = [dict(
 
 # 输出HTML文件
 fig.update_layout(title='动图示例')
+pio.write_html(fig, file='animation.html', auto_open=False)
 fig.show()
